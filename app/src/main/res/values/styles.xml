@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="comicSans_shaded">
+        <item name="android:fontFamily">@font/actionmanshaded</item>
+    </style>
+    <style name="pixel">
+        <item name="android:fontFamily">@font/adore64</item>
+    </style>
+    <style name="comicSans">
+        <item name="android:fontFamily">@font/ihatecomicsans</item>
+    </style>
+    <style name="pixel_shaded">
+        <item name="android:fontFamily">@font/sfpixelateshaded</item>
+    </style>
+
+
+    <style name="textoItemList">
+        <item name="android:fontFamily">@font/ihatecomicsans</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+    <!--COPIADO-->
+
+    <style name="GreenText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#00FF00</item>
+    </style>
+
+    <style name="title_hero_text">
+        <item name="android:fontFamily"></item>
+<!--
+        <item name="android:textColor">@color/red_text</item>
+-->
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Titulo">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:fontFamily">@fonts/SF Pixelate Shaded</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="negrita">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

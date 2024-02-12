@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:defaultNavHost="true"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/menuNavHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/menu_graph"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/miazulClaro"/>
+        <LinearLayout
+            android:layout_height="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <Button
+                android:id="@+id/btHome"
+                android:text="Home"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_weight="33"/>
+
+            <Button
+                android:id="@+id/btFav"
+                android:text="Favoritos"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="33"/>
+
+            <Button
+                android:id="@+id/btSetting"
+                android:text="Setting"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_weight="33"/>
+        </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/miazul"
+    tools:context=".CreditActivity">
+
+
+
+    &lt;!&ndash;<androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_graph"/>&ndash;&gt;
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="top">
+
+
+&lt;!&ndash;
+        <Button
+            android:id="@+id/CreditsButton"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end"
+            android:text="@string/btnInfo"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            tools:context=".CreditActivity"
+            tools:ignore="MissingConstraints"
+            android:theme="@style/Button.White"
+            tools:layout_editor_absoluteX="150dp"
+            tools:layout_editor_absoluteY="146dp" />
+
+        <Button
+            android:id="@+id/btSalir"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:text="Salir"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:theme="@style/Button.White"
+            tools:context=".CreditActivity"
+            tools:ignore="MissingConstraints" />
+        &ndash;&gt;
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/miazul"
+    tools:context=".CreditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="top">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/CreditsButton"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end"
+            android:text="@string/btnInfo"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            tools:context=".CreditActivity"
+            tools:ignore="MissingConstraints"
+            android:theme="@style/Button.White"
+            tools:layout_editor_absoluteX="150dp"
+            tools:layout_editor_absoluteY="146dp" />
+
+        <Button
+            android:id="@+id/btSalir"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:text="Salir"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:theme="@style/Button.White"
+            tools:context=".CreditActivity"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->

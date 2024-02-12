@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_graph"
+    app:startDestination="@id/itemListFragment">
+
+    <include app:graph="@navigation/home_navigation" />
+    <include app:graph="@navigation/favorites_navigation"/>
+
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.marisma.retroware.ItemListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" >
+        <argument
+            android:name="user"
+            app:argType="string"
+            android:defaultValue="Guest user"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_itemListFragment_to_detailItemFragment"
+            app:destination="@id/detailItemFragment" />
+        <action
+            android:id="@+id/xml"
+            app:destination="@id/home_navigation.xml" />
+        <action
+            android:id="@+id/xml3"
+            app:destination="@id/favorites_navigation.xml" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailItemFragment"
+        android:name="com.marisma.retroware.DetailItemFragment"
+        android:label="fragment_detail_item"
+        tools:layout="@layout/fragment_detail_item">
+        <argument
+            android:name="nombreVideojuego"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="user"
+            app:argType="string"
+            android:defaultValue="Guest user"
+            app:nullable="true" />
+        <action
+            android:id="@+id/xml2"
+            app:destination="@id/home_navigation.xml" />
+        <action
+            android:id="@+id/xml4"
+            app:destination="@id/favorites_navigation.xml" />
+    </fragment>
+</navigation>

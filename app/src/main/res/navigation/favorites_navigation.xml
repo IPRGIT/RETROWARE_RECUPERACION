@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/favorites_navigation.xml"
+    app:startDestination="@id/favItemListFragment2">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.marisma.retroware.MenuFragment"
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment3_to_favItemListFragment2"
+            app:destination="@id/favItemListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditFragment3"
+        android:name="com.marisma.retroware.CreditFragment"
+        android:label="CreditFragment" >
+        <action
+            android:id="@+id/action_creditFragment3_to_favItemListFragment2"
+            app:destination="@id/favItemListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFavItemFragment2"
+        android:name="com.marisma.retroware.DetailFavItemFragment"
+        android:label="fragment_detail_fav_item"
+        tools:layout="@layout/fragment_detail_fav_item" >
+        <action
+            android:id="@+id/action_detailFavItemFragment2_to_favItemListFragment2"
+            app:destination="@id/favItemListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailItemFragment3"
+        android:name="com.marisma.retroware.DetailItemFragment"
+        android:label="fragment_detail_item"
+        tools:layout="@layout/fragment_detail_item" >
+        <action
+            android:id="@+id/action_detailItemFragment3_to_favItemListFragment2"
+            app:destination="@id/favItemListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/favItemListFragment2"
+        android:name="com.marisma.retroware.FavItemListFragment"
+        android:label="fragment_fav_item_list"
+        tools:layout="@layout/fragment_fav_item_list" />
+    <fragment
+        android:id="@+id/itemListFragment3"
+        android:name="com.marisma.retroware.ItemListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" >
+        <action
+            android:id="@+id/action_itemListFragment3_to_favItemListFragment2"
+            app:destination="@id/favItemListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment2"
+        android:name="com.marisma.retroware.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" >
+        <action
+            android:id="@+id/action_userInfoFragment2_to_favItemListFragment2"
+            app:destination="@id/favItemListFragment2" />
+    </fragment>
+</navigation>

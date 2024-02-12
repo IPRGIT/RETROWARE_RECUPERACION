@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/miazul"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <!-- Texto de bienvenida (20%) -->
+        <TextView
+            android:id="@+id/textWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:gravity="center"
+            android:text="@string/bienvenido"
+            android:textColor="@color/miazulClaro"
+            android:textSize="40sp" />
+
+        <!-- Imágen (40%) -->
+        <ImageView
+            android:id="@+id/imagenView"
+            android:src="@drawable/logo_rs"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40sp"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            />
+
+        <!-- Cuadro de texto con hint "usuario" (20%) -->
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20sp"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:hint="@string/usuario"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="text"/>
+
+        <!-- Botón para navegar al fragment MenuFragment (20%) -->
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="300dp"
+            android:layout_height="10dp"
+            android:layout_weight="20"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:theme="@style/Button.White"
+            android:text="@string/btnInfo"
+            android:textSize="30sp"
+            android:textColor="@color/miazul"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

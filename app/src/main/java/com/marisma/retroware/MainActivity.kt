@@ -1,14 +1,73 @@
 package com.marisma.retroware
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import com.marisma.retroware.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //setContentView(R.layout.activity_main)
 
+        // Configurar el botón de retroceso del dispositivo
+        configureBackButton()
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(binding.navHostFragment.id) as NavHostFragment
+        val navController = navHostFragment.navController
+
+
+        val username = intent.getStringExtra("username")
+        if (username.isNullOrEmpty()) {
+            // El campo de nombre de usuario está vacío o nulo, navegar hacia el fragmento de inicio de sesión
+            navController.navigate(R.id.loginFragment)
+        }
+
+//        val appBarConfiguration = AppBarConfiguration(setOf(R.id.mainFragment))
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (!navController.navigateUp()) {
+                    finish()
+                }
+            }
+        })
+    }
+
+    // Método para configurar el botón de retroceso del dispositivo
+    private fun configureBackButton() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+                val currentFragment = navHostFragment.childFragmentManager.primaryNavigationFragment
+                if (currentFragment is MenuFragment) {
+                    // Si el fragmento actual es MenuFragment, utiliza su NavController
+                    val navController = currentFragment.findNavController()
+                    navController.popBackStack()
+                } else {
+                    // Si no es MenuFragment, permite el comportamiento normal del botón de retroceso
+                    isEnabled = false
+                    handleOnBackPressed()
+                }
+            }
+        })
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+//        val navController = findNavController(binding.navHostFragment.id)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(binding.navHostFragment.id) as NavHostFragment
+        val navController = navHostFragment.navController
+        return navController.navigateUp() || super.onSupportNavigateUp()
 
     }
 }

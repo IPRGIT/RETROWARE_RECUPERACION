@@ -13,6 +13,50 @@ import com.marisma.retroware.databinding.FragmentFavItemListBinding
 
 class MenuFragment : Fragment() {
 
+    //private var _binding: FragmentMenuBinding? = null
+    private lateinit var binding: FragmentMenuBinding
+    //private val binding get() = _binding!!
+
+    //comento esto para evitar un error - sera nacesario para controlar el usuario
+    val args:MenuFragmentArgs by navArgs()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentMenuBinding.inflate(inflater, container, false)
+        //comento esto para evitar un error - sera nacesario para controlar el usuario
+        val user = args.user
+
+
+        /*binding.btSetting.setOnClickListener {
+            findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToLoginFragment())
+        }*/
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //val user = args.user
+        //binding.usuario.text = user
+
+
+
+        binding.btHome.setOnClickListener {
+
+            val uri = Uri.parse("@id/home_navigation.xml")
+            findNavController().navigate(uri)
+        }
+        binding.btFav.setOnClickListener {
+            //findNavController().navigate(MenuFragmentDirections(app:destination="@id/favorites_navigation.xml"))
+            val uri = Uri.parse("@id/favorites_navigation.xml")
+            findNavController().navigate(uri)
+        }
+    }
+}
+
+/*class MenuFragment : Fragment() {
+
     private var _binding: FragmentMenuBinding? = null
     private val binding get() = _binding!!
     val args:MenuFragmentArgs by navArgs()
@@ -45,4 +89,4 @@ class MenuFragment : Fragment() {
         //val user = args.user
         //binding.usuario.text = user
     }
-}
+}*/
